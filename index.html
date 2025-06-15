@@ -1,0 +1,98 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Notes for Bunga</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #d8ecff;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: start;
+      min-height: 100vh;
+    }
+    h1 {
+      margin-top: 2rem;
+      color: #245b8c;
+    }
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 2rem 0;
+      justify-content: center;
+    }
+    button {
+      padding: 0.8rem 1.2rem;
+      background-color: #ffffff;
+      border: 2px solid #245b8c;
+      border-radius: 12px;
+      font-size: 1rem;
+      color: #245b8c;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    button:hover {
+      background-color: #cbe5ff;
+    }
+    .note {
+      background-color: #ffffff;
+      border: 1px solid #245b8c;
+      border-radius: 12px;
+      padding: 1.5rem;
+      width: 80%;
+      max-width: 500px;
+      text-align: center;
+      color: #333;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+  <h1>Notes for Bunga 💙</h1>
+  <div class="buttons">
+    <button onclick="showNote('marah')">Marah 😡</button>
+    <button onclick="showNote('sedih')">Sedih 😢</button>
+    <button onclick="showNote('senang')">Senang 😊</button>
+    <button onclick="showNote('kecewa')">Kecewa 😔</button>
+    <button onclick="showNote('berat')">Harinya Berat 💤</button>
+  </div>
+  <div class="note" id="noteBox">Pilih mood kamu dulu ya, sayang 💌</div>  <script>
+    const notes = {
+      marah: [
+        "Even when you're mad, I still love you just the same. Take your time, I'll be here.",
+        "Aku tahu kadang aku nyebelin. Tapi hatiku cuma buat kamu kok.",
+        "Kalau kamu lagi marah, aku pengen jadi peluk paling adem yang nenangin kamu."
+      ],
+      sedih: [
+        "If your heart feels heavy, let mine carry some of the weight.",
+        "Aku pengen ada di sebelahmu, dengerin semua yang kamu rasain. Kamu nggak sendiri.",
+        "Hey, it’s okay to feel down. Just remember, you're my favorite person—always."
+      ],
+      senang: [
+        "Your smile is my favorite view. Keep shining, love!",
+        "Liat kamu bahagia, itu udah cukup bikin hariku cerah. 🩵",
+        "I’m proud of you, even in the little things. Let's celebrate every joy together!"
+      ],
+      kecewa: [
+        "I'm sorry if I ever let you down. I’m learning, and I’m always choosing you.",
+        "Rasa kecewa itu valid. Tapi jangan lupa, there's still so much love between us.",
+        "Kadang yang kita harap nggak terjadi. Tapi aku harap kamu tetap percaya sama kita."
+      ],
+      berat: [
+        "If today feels too much, let tomorrow be softer. Rest now, love.",
+        "Hari ini berat ya? Sini, peluk virtual dulu 🤗 Aku di sini kok.",
+        "Take it slow. One breath, one step. You're stronger than you think."
+      ]
+    };
+
+    function showNote(mood) {
+      const message = notes[mood][Math.floor(Math.random() * notes[mood].length)];
+      document.getElementById('noteBox').innerText = message;
+    }
+  </script></body>
+</html>
